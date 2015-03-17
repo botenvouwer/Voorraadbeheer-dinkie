@@ -11,7 +11,7 @@ public class Artikel {
         voorraad = 0;
     }
     
-    public int getArtNummer() {
+    public int getNummer() {
         return nummer;
     }
     
@@ -33,6 +33,10 @@ public class Artikel {
     
     public void uitboeken(int voorraadVermindering) {
         voorraad -= voorraadVermindering;
+    }
+    
+    public boolean equals(Artikel ref) {
+        return ref.getNummer() == nummer;
     }
     
     
