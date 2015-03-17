@@ -38,6 +38,4 @@ public class Artikel {
     public boolean equals(Artikel ref) {
         return ref.getNummer() == nummer;
     }
-    
-    
 }
