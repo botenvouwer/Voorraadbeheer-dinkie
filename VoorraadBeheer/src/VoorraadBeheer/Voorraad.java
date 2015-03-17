@@ -10,7 +10,7 @@ public class Voorraad {
     }
     
     public void bestaalAl(Artikel check) {
-        for(Artikel refArtikel : lijstArtikelen) {
+        for(Artikel : lijstArtikelen) {
             
         }
     }
