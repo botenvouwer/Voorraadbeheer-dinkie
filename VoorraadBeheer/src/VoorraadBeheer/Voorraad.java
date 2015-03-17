@@ -8,6 +8,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Voorraad {
 
@@ -15,6 +17,13 @@ public class Voorraad {
 
     public Voorraad() {
         lijstArtikelen = new ArrayList<>();
+        try {
+            openen();
+        } catch (IOException ex) {
+            Logger.getLogger(Voorraad.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Voorraad.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
 
     public boolean bestaadAl(Artikel check) {
@@ -44,16 +53,16 @@ public class Voorraad {
     }
 
     public void slaOp() throws FileNotFoundException, IOException {
-        FileOutputStream fout = new FileOutputStream("/Database");
+        FileOutputStream fout = new FileOutputStream("Database");
         ObjectOutputStream oos = new ObjectOutputStream(fout);
         oos.writeObject(lijstArtikelen);
         fout.close();
     }
     
     public void openen() throws FileNotFoundException, IOException, ClassNotFoundException {
-        File f = new File("/Database");
+        File f = new File("Database");
         if(f.exists()) {
-        FileInputStream fis = new FileInputStream("/Database");
+        FileInputStream fis = new FileInputStream("Database");
         ObjectInputStream ois = new ObjectInputStream(fis);
         lijstArtikelen = (ArrayList<Artikel>) ois.readObject();
         }
