@@ -17,9 +17,12 @@ public class Voorraad {
         return b;
     }
     
-    public void voegArtikelToe(Artikel newArtikel) {
+    public boolean voegArtikelToe(Artikel newArtikel) {
         if(!bestaadAl(newArtikel)) {
-            
+            lijstArtikelen.add(newArtikel);
+            return true;
+        } else {
+            return false;
         }
     }
     
