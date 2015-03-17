@@ -26,4 +26,13 @@ public class Voorraad {
         }
     }
     
+    public boolean verwijderArtikel(Artikel wegArtikel) {
+        if(!bestaadAl(wegArtikel)) {
+            lijstArtikelen.remove(wegArtikel);
+            return true;
+        } else {
+            return false;
+        }
+    }
+    
 }
