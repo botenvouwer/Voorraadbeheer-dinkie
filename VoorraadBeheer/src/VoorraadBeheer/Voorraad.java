@@ -9,14 +9,18 @@ public class Voorraad {
         lijstArtikelen = new ArrayList<>();
     }
     
-    public void bestaalAl(Artikel check) {
+    public boolean bestaadAl(Artikel check) {
+        boolean b = false;
         for(Artikel refArtikel: lijstArtikelen) {
-            
-        }
+            b = check.equalss(refArtikel);
+            }
+        return b;
     }
     
     public void voegArtikelToe(Artikel newArtikel) {
-        
+        if(!bestaadAl(newArtikel)) {
+            
+        }
     }
     
 }
