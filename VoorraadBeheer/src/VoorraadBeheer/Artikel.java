@@ -1,30 +1,38 @@
 package VoorraadBeheer;
 
 public class Artikel {
-    private final int artNummer;
+    private final int nummer;
     private final String naam;
-    private int aantalAanwezig;
+    private int voorraad;
     
-    public Artikel(int artNummer, String naam) {
-        this.artNummer = artNummer;
+    public Artikel(int nummer, String naam) {
+        this.nummer = nummer;
         this.naam = naam;
-        aantalAanwezig = 0;
+        voorraad = 0;
     }
     
     public int getArtNummer() {
-        return artNummer;
+        return nummer;
     }
     
     public String getNaam() {
         return naam;
     }
     
-    public void setAantalAaanwezig(int geteldAantal) {
-        aantalAanwezig = geteldAantal;
+    public void setVoorraad(int geteldAantal) {
+        voorraad = geteldAantal;
     }
     
-    public int getAantalAanwezig() {
-        return aantalAanwezig;
+    public int getVoorraad() {
+        return voorraad;
+    }
+    
+    public void inboeken(int extraVoorraad) {
+        voorraad += extraVoorraad;
+    }
+    
+    public void uitboeken(int voorraadVermindering) {
+        voorraad -= voorraadVermindering;
     }
     
     
