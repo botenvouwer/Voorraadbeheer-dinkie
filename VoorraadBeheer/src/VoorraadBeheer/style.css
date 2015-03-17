@@ -1,0 +1,31 @@
+.control{
+    -fx-padding: 10px;
+    -fx-spacing: 5px;
+    -fx-border-color: red;
+    -fx-alignment:center-right;
+}
+
+.control Button{
+    
+}
+
+.artikelNummer{
+    
+}
+
+.artikelNaam{
+    
+}
+
+.artikelAantal{
+    
+}
+
+.record{
+    -fx-padding: 10px;
+    -fx-spacing: 5px;
+}
+
+.record Button{
+    
+}
