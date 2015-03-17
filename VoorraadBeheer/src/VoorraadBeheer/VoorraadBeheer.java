@@ -1,5 +1,13 @@
 package VoorraadBeheer;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -11,13 +19,18 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class VoorraadBeheer extends Application{
-
+    
+    private Voorraad voorraad = new Voorraad();
+    
     public static void main(String[] args){
         launch(args);
     }
     
     @Override
     public void start(Stage applicatie) throws Exception {
+        
+        //temp
+        
         
         //Voorraad overzicht
         ScrollPane container = new ScrollPane();
@@ -62,8 +75,25 @@ public class VoorraadBeheer extends Application{
         scherm.getStylesheets().add("VoorraadBeheer/style.css");
         
         applicatie.setScene(scherm);
-        applicatie.sizeToScene();
+        applicatie.setHeight(400);
+        applicatie.setWidth(500);
         applicatie.show();
+    }
+    
+    public void slaOp() throws FileNotFoundException, IOException {
+       /* FileOutputStream fout = new FileOutputStream("Database");
+        ObjectOutputStream oos = new ObjectOutputStream(fout);
+        oos.writeObject(lijstArtikelen);
+        fout.close();*/
+    }
+    
+    public void openen() throws FileNotFoundException, IOException, ClassNotFoundException {
+       /* File f = new File("Database");
+        if(f.exists()) {
+        FileInputStream fis = new FileInputStream("Database");
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        lijstArtikelen = (ArrayList<Artikel>) ois.readObject();
+        }*/
     }
     
 }

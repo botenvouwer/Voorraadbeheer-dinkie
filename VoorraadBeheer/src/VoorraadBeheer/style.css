@@ -1,7 +1,7 @@
 .control{
     -fx-padding: 10px;
     -fx-spacing: 5px;
-    -fx-border-color: red;
+    -fx-border-color: black;
     -fx-alignment:center-right;
 }
 
