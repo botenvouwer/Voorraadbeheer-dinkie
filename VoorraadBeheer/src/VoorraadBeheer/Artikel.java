@@ -31,8 +31,13 @@ public class Artikel {
         voorraad += extraVoorraad;
     }
     
-    public void uitboeken(int voorraadVermindering) {
+    public boolean uitboeken(int voorraadVermindering) {
+        if((voorraad - voorraadVermindering) >= 0) {
         voorraad -= voorraadVermindering;
+        return true;
+        } else { 
+            return false;
+        }
     }
     
     public boolean equalss(Artikel ref) {
