@@ -35,7 +35,7 @@ public class Artikel {
         voorraad -= voorraadVermindering;
     }
     
-    public boolean equals(Artikel ref) {
+    public boolean equalss(Artikel ref) {
         return ref.getNummer() == nummer;
     }
 }
