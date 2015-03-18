@@ -7,8 +7,6 @@ public class Artikel implements Serializable{
     private String naam;
     private int voorraad;
     
-    public Artikel(){}
-    
     public Artikel(int nummer, String naam) {
         this.nummer = nummer;
         this.naam = naam;
