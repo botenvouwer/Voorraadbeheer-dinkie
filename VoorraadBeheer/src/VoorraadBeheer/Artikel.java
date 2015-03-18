@@ -1,9 +1,13 @@
 package VoorraadBeheer;
 
-public class Artikel {
-    private final int nummer;
-    private final String naam;
+import java.io.Serializable;
+
+public class Artikel implements Serializable{
+    private int nummer;
+    private String naam;
     private int voorraad;
+    
+    public Artikel(){}
     
     public Artikel(int nummer, String naam) {
         this.nummer = nummer;
@@ -42,5 +46,9 @@ public class Artikel {
     
     public boolean equalss(Artikel ref) {
         return ref.getNummer() == nummer;
+    }
+    
+    public String toString() {
+        return naam + " heeft een voorraad van " + voorraad + " en het artikelnummer is" + nummer;
     }
 }
