@@ -39,5 +39,6 @@ public class Voorraad extends ArrayList<Artikel> {
                 return gezocht;
             }
         }
+        return null;
     }
 }
