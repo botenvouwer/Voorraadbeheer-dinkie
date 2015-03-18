@@ -6,7 +6,7 @@ public class Voorraad extends ArrayList<Artikel> {
  
     public boolean bestaadAl(Artikel check) {
         for (Artikel refArtikel : this) {
-            if(check.equalss(refArtikel)){
+            if(check.equals(refArtikel)){
                 return true;
             }
         }

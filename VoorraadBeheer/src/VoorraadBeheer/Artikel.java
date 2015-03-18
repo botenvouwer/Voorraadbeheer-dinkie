@@ -21,12 +21,12 @@ public class Artikel implements Serializable{
         return naam;
     }
     
-    public void setVoorraad(int geteldAantal) {
-        voorraad = geteldAantal;
-    }
-    
     public int getVoorraad() {
         return voorraad;
+    }
+    
+    public void setVoorraad(int geteldAantal) {
+        voorraad = geteldAantal;
     }
     
     public void inboeken(int extraVoorraad) {
@@ -42,8 +42,8 @@ public class Artikel implements Serializable{
         }
     }
     
-    public boolean equalss(Artikel ref) {
-        return ref.getNummer() == nummer;
+    public boolean equals(Artikel ref) {
+        return (ref.getNummer() == nummer);
     }
     
     public String toString() {
