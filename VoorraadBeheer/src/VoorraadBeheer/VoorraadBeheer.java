@@ -1,13 +1,7 @@
 package VoorraadBeheer;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -34,14 +28,14 @@ public class VoorraadBeheer extends Application{
         
         //Voorraad overzicht
         ScrollPane container = new ScrollPane();
+        container.setFitToWidth(true);
         
         VBox records = new VBox();
-        records.setMinHeight(300);
-        records.setMaxHeight(500);
+        records.getStyleClass().add("recordContainer");
         
-        HBox[] record = new HBox[30];
-        for(HBox b : record){
-            b = new HBox();
+        BorderPane[] record = new BorderPane[30];
+        for(BorderPane b : record){
+            b = new BorderPane();
             
             Label artikelNummer = new Label("32132");
             artikelNummer.getStyleClass().add("artikelNummer");
@@ -53,7 +47,15 @@ public class VoorraadBeheer extends Application{
             Button muteer = new Button("Muteer");
             Button verwijderen = new Button("Verwijderen");
             
-            b.getChildren().addAll(artikelNummer, artikelNaam, artikelAantal, muteer, verwijderen);
+            HBox artikelInfo = new HBox();
+            artikelInfo.getChildren().addAll(artikelNummer, artikelNaam);
+            
+            HBox buttons = new HBox();
+            buttons.getChildren().addAll(muteer, verwijderen);
+            
+            b.setLeft(artikelInfo);
+            b.setCenter(artikelAantal);
+            b.setRight(buttons);
             b.getStyleClass().add("record");
             
             records.getChildren().add(b);

@@ -6,3 +6,5 @@
 /VoorraadBeheer/build.xml
 /VoorraadBeheer/manifest.mf
 *.properties
+VoorraadBeheer/nbproject/private/private.properties
+*.properties
