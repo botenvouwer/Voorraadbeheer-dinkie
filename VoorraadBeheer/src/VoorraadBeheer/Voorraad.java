@@ -33,10 +33,10 @@ public class Voorraad extends ArrayList<Artikel> {
         }
     }
     
-    public Artikel (int zoekNummer) {
+    public Artikel zoekArtikel(int zoekNummer) {
         for(Artikel gezocht : this) {
             if(zoekNummer == gezocht.getNummer()) {
-                
+                return gezocht;
             }
         }
     }
