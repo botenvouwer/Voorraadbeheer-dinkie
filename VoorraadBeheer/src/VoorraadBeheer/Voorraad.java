@@ -8,11 +8,12 @@ public class Voorraad extends ArrayList<Artikel> {
     }
  
     public boolean bestaadAl(Artikel check) {
-        boolean b = false;
         for (Artikel refArtikel : this) {
-            b = check.equalss(refArtikel);
+            if(check.equalss(refArtikel)){
+                return true;
+            }
         }
-        return b;
+        return false;
     }
 
     public boolean voegArtikelToe(Artikel newArtikel) {
