@@ -5,3 +5,4 @@
 /VoorraadBeheer/build/
 /VoorraadBeheer/build.xml
 /VoorraadBeheer/manifest.mf
+*.properties
