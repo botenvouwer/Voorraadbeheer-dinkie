@@ -98,16 +98,20 @@ public class MuteerForm extends Stage {
             }
         }
     }
-    
+
     public void uitboeken() {
         if (geldigGetal()) {
             ConfirmBox cf = new ConfirmBox(this, "telling", "Klopt het dat u de voorraad van " + artikel.getNummer() + ", " + artikel.getNaam() + " met " + aantal.getText() + " wil verminderen?");
             cf.showAndWait();
             if (cf.getGonogo()) {
-                artikel.setVoorraad(artikel.getVoorraad() - Integer.parseInt(aantal.getText()));
-                hide();
+                if (artikel.getVoorraad() - Integer.parseInt(aantal.getText()) >= 0) {
+                    artikel.setVoorraad(artikel.getVoorraad() - Integer.parseInt(aantal.getText()));
+                    hide();
+                } else {
+                    aantalE.setText("Er kan geen negatieve voorraad zijn!");
+                }
             }
         }
+
     }
-    
 }
