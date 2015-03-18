@@ -3,7 +3,7 @@ package VoorraadBeheer;
 import java.util.ArrayList;
 
 public class Voorraad extends ArrayList<Artikel> {
- 
+    
     public boolean bestaadAl(Artikel check) {
         for (Artikel refArtikel : this) {
             if(check.equals(refArtikel)){

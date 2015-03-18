@@ -19,10 +19,10 @@ import javafx.stage.Stage;
 
 public class VoorraadBeheer extends Application{
     
-    Stage applicatie;
+    private Stage applicatie;
     private Voorraad voorraad = new Voorraad();
-    File save = new File("voorraad.obj");
-    VBox records;
+    private File save = new File("voorraad.obj");
+    private VBox records;
     
     public static void main(String[] args){
         launch(args);
