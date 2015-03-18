@@ -27,6 +27,7 @@ public class MuteerForm extends Stage {
         setTitle("Voorraad muteren");
 
         BorderPane wrapper = new BorderPane();
+        wrapper.getStyleClass().add("defPadding");
 
         // Bovenkant scherm.
         VBox toplane = new VBox();
@@ -56,12 +57,13 @@ public class MuteerForm extends Stage {
         Button inboeking = new Button("Inboeken");
         inboeking.setOnAction(e -> inboeken());
         buttonWrapper.getChildren().addAll(afboeking, telling, inboeking);
-        buttonWrapper.getStyleClass().add("buttonsMuteer");
+        buttonWrapper.getStyleClass().addAll("buttonsMuteer", "defSpacing");
         wrapper.setBottom(buttonWrapper);
 
         Scene scene = new Scene(wrapper);
         setScene(scene);
         scene.getStylesheets().add("VoorraadBeheer/style.css");
+        sizeToScene();
 
     }
 
