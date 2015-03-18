@@ -21,6 +21,14 @@
     
 }
 
+.defSpacing{
+    -fx-spacing: 5px;
+}
+
+.defPadding{
+    -fx-padding:10px;
+}
+
 .recordContainer{
     
 }
@@ -28,8 +36,22 @@
 .record{
     -fx-padding: 10px;
     -fx-spacing: 5px;
+    -fx-border-color: black;
+    -fx-border-width: 0px 0px 1px 0px;
+}
+
+.record .artikelInfo{
+    -fx-spacing: 5px;
 }
 
 .record Button{
     
+}
+
+.right{
+    -fx-alignment:center-right;
+}
+
+.error{
+    -fx-text-fill:red;
 }
