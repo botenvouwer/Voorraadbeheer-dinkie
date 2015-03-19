@@ -26,7 +26,7 @@ public class MuteerForm extends Stage {
         setTitle("Voorraad muteren");
 
         BorderPane wrapper = new BorderPane();
-        wrapper.getStyleClass().add("defPadding");
+        setResizable(false);
 
         // Bovenkant scherm.
         VBox toplane = new VBox();
@@ -50,13 +50,16 @@ public class MuteerForm extends Stage {
         // Buttons
         HBox buttonWrapper = new HBox();
         Button afboeking = new Button("Uitboeken");
+        afboeking.setMinWidth(75);
         afboeking.setOnAction(e -> uitboeken());
         Button telling = new Button("Geteld");
+        telling.setMinWidth(75);
         telling.setOnAction(e -> geteld());
         Button inboeking = new Button("Inboeken");
+        inboeking.setMinWidth(75);
         inboeking.setOnAction(e -> inboeken());
         buttonWrapper.getChildren().addAll(afboeking, telling, inboeking);
-        buttonWrapper.getStyleClass().addAll("buttonsMuteer", "defSpacing");
+        buttonWrapper.getStyleClass().addAll("buttonsMuteer");
         wrapper.setBottom(buttonWrapper);
 
         Scene scene = new Scene(wrapper);
@@ -68,9 +71,14 @@ public class MuteerForm extends Stage {
 
     public boolean geldigGetal() {
         try {
+            if(Integer.parseInt(aantal.getText()) >= 0) {
             Integer.parseInt(aantal.getText());
             aantalE.setText("");
             return true;
+            } else {
+                aantalE.setText("Voer een geldig getal in!");
+                return false;
+            }
         } catch (NumberFormatException e) {
             aantalE.setText("Voer een geldig getal in!");
             return false;

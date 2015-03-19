@@ -55,3 +55,17 @@
 .error{
     -fx-text-fill:red;
 }
+
+.toplaneMuteer{
+    -fx-spacing: 25;
+}
+
+.inputMuteer{
+    -fx-alignment: CENTER;
+    -fx-fill-width: false;
+    -fx-spacing: 5;
+}
+
+.buttonsMuteer{
+    -fx-spacing: 50;
+}
